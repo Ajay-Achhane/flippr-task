@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: "Inter", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sen", serif !important;
+  font-weight: bold;
+}
+
+.assetLine::before {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  top: -78px;
+  right: -58px;
+
+  background: linear-gradient(90deg, #ffd050 71%, #592ea9 30%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
