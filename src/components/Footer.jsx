@@ -2,6 +2,7 @@ import React from "react";
 import { baseUrl } from "../lib/helper";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import CustomButton from "./uiComponent/CustomButton";
 
 const Footer = () => {
   return (
@@ -60,9 +61,8 @@ const Footer = () => {
             className="px-5 py-2 rounded-md bg-[#4C4C4C] border border-[#6D6E76] w-full sm:w-auto"
             placeholder="Enter your email"
           />
-          <button className="bg-[#FFD050] text-[#232536] font-bold text-lg px-5 py-2 rounded-md w-full sm:w-auto">
-            Subscribe
-          </button>
+          <CustomButton btnName={"Subscribe"} className={"mt-0"}/>
+          
         </div>
       </div>
 

@@ -1,87 +1,50 @@
 import React from 'react';
+import { baseUrl } from '../lib/helper';
+import { postData } from '../data/projectData';
+import PostCards from './uiComponent/PostCard';
+import { Link } from 'react-router-dom';
+import CustomButton from './uiComponent/CustomButton';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Author = () => {
   return (
-    <div className="container mx-auto p-6 max-w-5xl">
+    <div className="container mx-auto p-6 max-w-6xl">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-center gap-6 mb-10">
-        <img
-          src="https://via.placeholder.com/162x205"
-          alt="Andrew Johnson"
-          className="w-40 h-52 object-cover rounded-md"
-        />
-        <div className="text-center md:text-left">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">
-            Hey there, I’m Andrew Johnson and welcome to my Blog
-          </h1>
-          <p className="text-gray-600 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div className="flex justify-center md:justify-start gap-4 text-xl">
-            <a href="#" className="text-gray-600 hover:text-blue-500">
-              <i className="fa fa-facebook"></i>
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-400">
-              <i className="fa fa-twitter"></i>
-            </a>
-            <a href="#" className="text-gray-600 hover:text-pink-500">
-              <i className="fa fa-instagram"></i>
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">
-              <i className="fa fa-linkedin"></i>
-            </a>
+      <section className="flex items-center lg:flex-row-reverse justify-center gap-x-10 p-3 bg-[#F4F0F8] ">
+      {/* ----info section--- */}
+      <div className=" lg:px-8 px-0 lg:w-[54%] w-full   flex flex-col gap-3">
+        <h1 className="font-bold text-4xl">
+         Hey there , I'am Andrew jhonson and welcome to my Blog
+        </h1>
+        
+        <p className="text-gray-600">
+          Duis aite irure dolor in reprehendeit in voliptate velit esse cillim
+          dolore eu fugiat nulla pariatur. Excepteur sint occaacat cupidatat non
+          prodent. Duis aite irure dolor in reprehendeit in voliptate velit esse cillim
+          dolore eu fugiat nulla pariatur. Excepteur sint occaacat cupidatat non
+          prodent.
+        </p>
+        <div className='items-cente flex gap-x-3 text-gray-700'><FaFacebook/> <FaTwitter/> <FaInstagram/><FaLinkedin/>
           </div>
-        </div>
+       
       </div>
+      {/* ---image section-- */}
+      <img
+      className="rounded-xl lg:w-auto lg:h-auto W-11/12  lg:rounded-md my-8"
+      src={`${baseUrl()}/assets/client-first-images/close-up-photography-of-man-wearing-sunglasses-1212984 (2).svg`}
+        alt="men-sittig-on-table"
+      />
+    </section>
 
       {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-yellow-400 via-yellow-400 to-purple-600 mb-10"></div>
+      <div className="h-5 bg-gradient-to-r from-yellow-400 via-yellow-400 to-purple-600 mb-10"></div>
 
       {/* Posts Section */}
-      <h2 className="text-2xl font-bold mb-6">My Posts</h2>
-      <div className="space-y-6">
-        {/* Post 1 */}
-        <div className="flex flex-col md:flex-row bg-white shadow-md rounded-md overflow-hidden">
-          <img
-            src="https://via.placeholder.com/400x200"
-            alt="Post Image"
-            className="w-full md:w-1/3 object-cover"
-          />
-          <div className="p-4">
-            <p className="text-indigo-600 uppercase text-sm font-semibold mb-2">
-              Business
-            </p>
-            <h3 className="text-lg font-bold mb-2">
-              Font sizes in UI design: The complete guide to follow
-            </h3>
-            <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        {/* Post 2 */}
-        <div className="flex flex-col md:flex-row bg-white shadow-md rounded-md overflow-hidden">
-          <img
-            src="https://via.placeholder.com/400x200"
-            alt="Post img"
-            className="w-full md:w-1/3 object-cover"
-          />
-          <div className="p-4">
-            <p className="text-indigo-600 uppercase text-sm font-semibold mb-2">
-              Economy
-            </p>
-            <h3 className="text-lg font-bold mb-2">
-              How to build rapport with your web design clients
-            </h3>
-            <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
+      <h1 className="capitalize  font-bold lg:text-4xl text-2xl">All Post</h1>
+      <div className="my-8">
+        {postData.map((data) => (
+          <Link to={"/blog-post"}><PostCards data={data} /></Link>
+        ))}
       </div>
     </div>
   );
