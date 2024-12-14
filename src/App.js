@@ -6,6 +6,7 @@ import Blog from "./pages/Blog";
 import Contact from "./components/Contact";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Author from "./components/Author";
+import Category from "./pages/Category";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy/>} />
         <Route path="/author" element={<Author/>} />
+        <Route path="/blog/:category" element={<Category/>} />
       </Routes>
     </Layout>
   );

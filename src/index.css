@@ -21,10 +21,26 @@ h6 {
   width: 100%;
   top: -78px;
   right: -58px;
-
   background: linear-gradient(90deg, #ffd050 71%, #592ea9 30%);
+}
+.aboutLine::after {
+  content: "";
+  position: relative;
+  height: 28px;
+  margin: auto;
+  display: flex;
+  width: 80%;
+  z-index: 30;
+  top: 96%;
+  right: 0;
+  background: linear-gradient(90deg, #592ea9 30%,#ffd050 30%);
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.aboutUpBgPlacement {
+  background-position:center!important;
+  background-size: cover!important;
 }
